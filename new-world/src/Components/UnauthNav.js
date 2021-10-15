@@ -4,14 +4,14 @@ import { HashLink } from 'react-router-hash-link'
 
 const Wrapper = styled.div`
     background-color: grey;
-    height:50px;
+    height:5%;
     width:100%;
     display:flex;
     flex-flow:row wrap;
     justify-content:space-between;
     position:fixed;
     opacity:0.9;
-    ;
+    z-index:1;
 `
 
 const Links = styled.div`
