@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+import './Home.css'
 
 const Wrapper = styled.div`
     height:100vh;
@@ -6,7 +7,7 @@ const Wrapper = styled.div`
     text-align:center;
     display:flex;
     align-items:center;
-    background-image: url(/Images/epic.jpg);
+    background-image: url(/Images/img1.jpg);
     background-size:cover;
 `
 
@@ -25,15 +26,11 @@ const Title = styled.div`
     box-shadow: 5px 5px 15px 5px grey;
 `
 
-const H1 = styled.h1`
-    text-align:center;
-`
-
 const Home = () => {
     return(
         <Wrapper id='home'>
            <Title>
-                <H1>Welcome To The Agency!</H1>
+                <h1 className='anim-typewriter'>Welcome To The Agency!</h1>
            </Title>
         </Wrapper>
     )

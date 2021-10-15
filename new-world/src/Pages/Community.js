@@ -6,7 +6,7 @@ const Wrapper = styled.div`
     text-align:center;
     display:flex;
     flex-flow:column nowrap;
-    background-image: url(/Images/Invasion.jpg);
+    background-image: url(/Images/img3.jpg);
     background-size:cover;
 `
 const InsideWraper = styled.div`
