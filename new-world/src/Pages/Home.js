@@ -1,16 +1,37 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+import './Home.css'
 
 const Wrapper = styled.div`
     height:100vh;
     width:100%;
     text-align:center;
-    padding-top:50px;
+    display:flex;
+    align-items:center;
+    background-image: url(/Images/img1.jpg);
+    background-size:cover;
+`
+
+const Title = styled.div`
+    width:50%;
+    height:100px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:50px;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:white;
+    opacity:0.75;
+    box-shadow: 5px 5px 15px 5px grey;
 `
 
 const Home = () => {
     return(
         <Wrapper id='home'>
-            Home
+           <Title>
+                <h1 className='anim-typewriter'>Welcome To The Agency!</h1>
+           </Title>
         </Wrapper>
     )
 }

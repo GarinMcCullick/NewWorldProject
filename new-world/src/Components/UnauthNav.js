@@ -1,17 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { HashLink } from 'react-router-hash-link'
+//add on authorized nav import {DropDownMenu, NavItem} from './NavItem'
 
 const Wrapper = styled.div`
     background-color: grey;
-    height:50px;
+    height:5%;
     width:100%;
     display:flex;
     flex-flow:row wrap;
     justify-content:space-between;
     position:fixed;
     opacity:0.9;
-    ;
+    z-index:1;
+    align-items:center;
 `
 
 const Links = styled.div`
@@ -20,39 +22,38 @@ const Links = styled.div`
     display:flex;
     flex-flow:row wrap;
     justify-content:space-evenly;
-    align-content:center;
-`
-
-const User = styled.div`
-    max-width:25%;
-    width:15%;
-    height:100%;
-    margin-right:1rem;
-    display:flex;
-    flex-flow:row nowrap;
 `
 
 const NavLink = styled(HashLink)`
     color:black;
 `
 
-const Icon = styled.div`
-    background-color:lightgreen;
-    width: 20px;
-    height:20px;
-    margin:1rem;
-    margin-bottom:1.2rem;
-    align-self:center;
-    border-radius: 100%;
+const Login = styled.div`
+    background-color:skyblue;
+    max-width:15%;
+    width:7%;
+    height:80%;
+    margin-right:1rem;
+    display:flex;
+    cursor:pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    justify-content:center;
+    align-items:center;
+    font-size:70%;
 `
 
-const P = styled.p`
-    color:white;
+const A = styled.a`
+    text-decoration:none;
+    color:black;
 `
 
-class UnAuthNav extends Component {
+function UnAuthNav() {
 
-    render() {
         return(
             <Wrapper>
                 <Links>
@@ -61,14 +62,14 @@ class UnAuthNav extends Component {
                     <NavLink smooth to='#community'>Community</NavLink>
                     <NavLink smooth to='#companies'>Companies</NavLink>
                 </Links>
-                <User>
-                    <Icon></Icon>
-                    <P>Username</P>
-                </User>
+                <Login>
+                    <A href=''>Discord Login</A>
+                </Login>
+                {/*This goes on Authorized nav to add username and dropdown <NavItem > <DropDownMenu /> </NavItem>*/}
             </Wrapper>
         )
     }
-}
+
 
 export default UnAuthNav
     
