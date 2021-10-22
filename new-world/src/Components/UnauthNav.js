@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { HashLink } from 'react-router-hash-link'
+import axios from 'axios'
 //add on authorized nav import {DropDownMenu, NavItem} from './NavItem'
 
 const Wrapper = styled.div`
@@ -47,10 +48,9 @@ const Login = styled.div`
     font-size:70%;
 `
 
-const A = styled.a`
-    text-decoration:none;
-    color:black;
-`
+const LoginClick = () =>{
+    window.open('https://the-agency-backend.herokuapp.com/auth/discord', '_self')
+}
 
 function UnAuthNav() {
 
@@ -62,8 +62,8 @@ function UnAuthNav() {
                     <NavLink smooth to='#community'>Community</NavLink>
                     <NavLink smooth to='#companies'>Companies</NavLink>
                 </Links>
-                <Login>
-                    <A href=''>Discord Login</A>
+                <Login onClick={LoginClick}>
+                    Discord Login
                 </Login>
                 {/*This goes on Authorized nav to add username and dropdown <NavItem > <DropDownMenu /> </NavItem>*/}
             </Wrapper>
