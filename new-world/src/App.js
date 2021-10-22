@@ -7,7 +7,6 @@ import Community from './Pages/Community';
 import Companies from './Pages/Companies';
 
 function App() {
-
   return (
     <div className='app'>
     <Router>

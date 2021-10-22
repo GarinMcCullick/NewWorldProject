@@ -33,7 +33,7 @@ function Carousel() {
         <div className='container-slider'>
             {carouselData.map((obj, index) =>{
                 return (
-                    <div key={obj.id} className={slideIndex === index + 1 ? 'slide active-anim' : 'slide'}>
+                    <div key={obj.index} className={slideIndex === index + 1 ? 'slide active-anim' : 'slide'}>
                         <img src={process.env.PUBLIC_URL + `/Images/img${index + 1}.jpg`} alt='pictures'/>
                     </div>
                 )
