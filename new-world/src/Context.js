@@ -1,11 +1,11 @@
 import React, { createContext, useEffect, useState } from 'react'
 import axios from 'axios';
 
-export const myContext = createContext({});
+export const myContext = createContext(null);
 
 export default function Context(props) {
 
-    const [userObject, setUserObject] = useState({});
+    const [userObject, setUserObject] = useState();
 
     useEffect(() => {
         axios.get("https://the-agency-backend.herokuapp.com/getuser", { withCredentials: true }).then((res) => {
