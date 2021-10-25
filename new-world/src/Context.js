@@ -14,8 +14,9 @@ export default function Context(props) {
                 setUserObject(res.data)
                 console.log('USEROBJECT', userObject)
             }
-        }).catch((res)=>{
-        console.log(res)
+        }).catch((err)=>{
+        console.log(err)
+        return(err)
     })
     },[])
     return(
