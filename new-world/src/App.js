@@ -12,7 +12,6 @@ import { myContext } from '../src/Context'
 function App(userObject) {
   const context = useContext(myContext)
   console.log('USEROBJ', context)
-  console.log("PROPS", userObject)
   //if (!userObject) {
 
   return (
