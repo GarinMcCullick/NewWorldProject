@@ -13,7 +13,7 @@ function App(userObject) {
   const context = useContext(myContext)
   console.log('USEROBJ', context)
   console.log("PROPS", userObject)
-  if (!userObject) {
+  //if (!userObject) {
 
   return (
     <div className='app'>
@@ -26,16 +26,6 @@ function App(userObject) {
       </Router>
     </div>
   );
-
-  }else {
-
-    return (
-      <Router>
-        <AuthNav />
-      </Router>
-    );
-
-  }
 }
 
 export default App;

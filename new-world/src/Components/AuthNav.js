@@ -49,7 +49,7 @@ const Login = styled.div`
 `
 
 const LoginClick = () =>{
-    window.open('https://the-agency-backend.herokuapp.com/auth/discord', '_self')
+    window.open("https://the-agency-backend.herokuapp.com/auth/discord", '_self')
 }
 
 function UnAuthNav() {
