@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './App.css'
 import UnAuthNav from './Components/UnauthNav';
 import AuthNav from './Components/AuthNav'
@@ -9,20 +9,24 @@ import Community from './Pages/Community';
 import Companies from './Pages/Companies';
 import { myContext } from '../src/Context'
 
-function App(userObject) {
+function App() {
   const context = useContext(myContext)
-  console.log('USEROBJ', context)
-  //if (!userObject) {
+  console.log('Context:', context)
+  const [loggedIn, setLoggedIn] = useState(false)
 
+  if(context === true){
+    setLoggedIn(loggedIn)
+  }else{
+    setLoggedIn(!loggedIn)
+  }
+//SET UP CONDITIONAL RENDERING ANNNNNND PROTECTED ROUTES, PROTECTED ROUTES INSIDE THE NAVS NOT IN APP
   return (
     <div className='app'>
-      <Router>
-          <UnAuthNav />
+          {loggedIn && <UnAuthNav />}
           <Home />
           <About />
           <Community />
           <Companies />
-      </Router>
     </div>
   );
 }

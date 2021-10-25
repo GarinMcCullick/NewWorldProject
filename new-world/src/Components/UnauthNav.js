@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { HashLink } from 'react-router-hash-link'
 import axios from 'axios'
+import { BrowserRouter as Router } from 'react-router-dom';
 //add on authorized nav import {DropDownMenu, NavItem} from './NavItem'
 
 const Wrapper = styled.div`
@@ -56,12 +57,14 @@ function UnAuthNav() {
 
         return(
             <Wrapper>
+                <Router>
                 <Links>
                     <NavLink smooth to='#home'>Home</NavLink>
                     <NavLink smooth to='#about'>About</NavLink>
                     <NavLink smooth to='#community'>Community</NavLink>
                     <NavLink smooth to='#companies'>Companies</NavLink>
                 </Links>
+                </Router>
                 <Login onClick={LoginClick}>
                     Discord Login
                 </Login>
