@@ -12,17 +12,10 @@ import { myContext } from '../src/Context'
 function App() {
   const context = useContext(myContext)
   console.log('Context:', context)
-  const [loggedIn, setLoggedIn] = useState(false)
-
-  if(context === true){
-    setLoggedIn(loggedIn)
-  }else{
-    setLoggedIn(!loggedIn)
-  }
 //SET UP CONDITIONAL RENDERING ANNNNNND PROTECTED ROUTES, PROTECTED ROUTES INSIDE THE NAVS NOT IN APP
   return (
     <div className='app'>
-          {loggedIn && <UnAuthNav />}
+          <UnAuthNav />
           <Home />
           <About />
           <Community />
