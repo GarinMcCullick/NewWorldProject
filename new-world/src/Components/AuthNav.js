@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { HashLink } from 'react-router-hash-link'
 import { DropDownMenu, NavItem } from './NavItem'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import Dashboard from '../Pages/Dashboard'
 //add on authorized nav import {DropDownMenu, NavItem} from './NavItem'
 
 const Wrapper = styled.div`
@@ -23,52 +24,54 @@ const Links = styled.div`
     display:flex;
     flex-flow:row wrap;
     justify-content:space-evenly;
+    color:black;
+    border:1px solid red;
 `
-
-const NavLink = styled(HashLink)`
+const Ul = styled.ul`
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:space-evenly;
+    align-content:center;
+    width:100%;
+    border:1px solid red;
+    height:100%;
+`
+const Li = styled.li`
     color:black;
 `
 
-const Login = styled.div`
-    background-color:skyblue;
-    max-width:15%;
-    width:7%;
-    height:80%;
-    margin-right:1rem;
-    display:flex;
-    cursor:pointer;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    justify-content:center;
-    align-items:center;
-    font-size:70%;
+const StyledLink = styled(Link)`
+    color:black;
+    text-decoration:none;
 `
 
-const LoginClick = () =>{
-    window.open("https://the-agency-backend.herokuapp.com/auth/discord", '_self')
-}
-
-function UnAuthNav() {
+function AuthNav() {
 
         return(
-            <Wrapper>
+           
+            <Wrapper> 
                 <Links>
-                    <NavLink smooth to='#home'>Home</NavLink>
-                    <NavLink smooth to='#about'>About</NavLink>
-                    <NavLink smooth to='#community'>Community</NavLink>
-                    <NavLink smooth to='#companies'>Companies</NavLink>
+                            <Ul>
+
+                            
+
+                            <Li><StyledLink to="/dashboard">Dashboard</StyledLink></Li>
+                       
+                        
+                            <Li><StyledLink to="/company">Company</StyledLink></Li>
+                        
+                        
+                            <Li><StyledLink to="/forums">Forums</StyledLink></Li>
+                        
+                        
+                            <Li><StyledLink to="/events">Events</StyledLink></Li>
+
+                            </Ul>
                 </Links>
-                <Login onClick={LoginClick}>
-                    Discord Login
-                </Login>
+                
                 <NavItem > <DropDownMenu /> </NavItem>
             </Wrapper>
         )
     }
 
-
-export default UnAuthNav
+export default AuthNav
