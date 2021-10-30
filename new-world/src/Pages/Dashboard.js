@@ -4,8 +4,6 @@ import NotificationTab from "../Components/NotificationTab"
 
 const Wrapper = styled.div`
     background-color:white;
-    display:flex;
-    justify-content:right;
 `
 
 
