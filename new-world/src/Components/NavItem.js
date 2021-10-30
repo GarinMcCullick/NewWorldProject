@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
-
+import axios from 'axios'
 
 const User = styled.div`
     max-width:25%;
@@ -85,6 +85,17 @@ const A = styled.a`
 
 export const DropDownMenu = () => {
 
+    const logout = () => { //logout not working because get user is in a useefect as well as retrieving user from localstorage being in a use effect as well. you need 2 homepages one authed and one not maybe? but the endpoint is setup on backend
+        axios.get("https://the-agency-backend.herokuapp.com/auth/logout", {
+            withCredentials: true
+        }).then(res => {
+            if(res.data === "done") {
+                localStorage.clear();
+                window.location.href = "/";
+            }
+        })
+    }
+
     return(
         <DropDown>
             <Link>
@@ -94,7 +105,7 @@ export const DropDownMenu = () => {
                 <A href=''>Account Settings</A>
             </Link>
             <Link>
-                <A href=''>SignOut</A>
+                <A onclick={logout}>SignOut</A>
             </Link>
         </DropDown>
     )
