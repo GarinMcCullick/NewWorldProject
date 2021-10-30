@@ -1,27 +1,18 @@
 import React from "react"
 import styled from "styled-components"
+import NotificationTab from "../Components/NotificationTab"
 
 const Wrapper = styled.div`
-    height:100vh;
-    width:100%;
-    text-align:center;
+    background-color:white;
     display:flex;
-    align-items:center;
-`
-
-const Div = styled.div`
-    width:50px;
-    height:50px;
-    border:1px solid red;
+    justify-content:right;
 `
 
 
 const Dashboard = () => {
     return(
         <Wrapper>
-           <Div>
-               Dashboard
-           </Div>
+            <NotificationTab />{/*make draggable*/}
         </Wrapper>
     )
 }

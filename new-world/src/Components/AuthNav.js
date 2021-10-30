@@ -25,7 +25,6 @@ const Links = styled.div`
     flex-flow:row wrap;
     justify-content:space-evenly;
     color:black;
-    border:1px solid red;
 `
 const Ul = styled.ul`
     display:flex;
@@ -33,7 +32,6 @@ const Ul = styled.ul`
     justify-content:space-evenly;
     align-content:center;
     width:100%;
-    border:1px solid red;
     height:100%;
 `
 const Li = styled.li`
