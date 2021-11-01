@@ -1,6 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import {myContext} from '../Context'
 import styled from 'styled-components'
 import axios from 'axios'
+
 
 const User = styled.div`
     max-width:25%;
@@ -42,12 +44,14 @@ const P = styled.p`
 
 export const NavItem = (props) => {
     
+    const {userObject} = useContext(myContext)
+    
     const [open, setOpen] = useState(false);
     return(
         <User onClick={()=> setOpen(!open)}>
             <NameContainer>
                 <Icon></Icon>
-                <P>GordanRamsey</P>
+                <P>{}</P>
             </NameContainer>
             {open && props.children}
         </User>
@@ -99,7 +103,7 @@ export const DropDownMenu = () => {
     return(
         <DropDown>
             <Link>
-                <A href=''>Profile</A>
+                <A href='/Dashboard'>Profile</A>
             </Link>
             <Link>
                 <A href=''>Account Settings</A>
