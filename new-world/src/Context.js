@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import axios from 'axios';
 
-export const myContext = createContext(null);
+export const myContext = createContext({});
 
 const reload = () => {
 

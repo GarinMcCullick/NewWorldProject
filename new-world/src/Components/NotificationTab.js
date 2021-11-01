@@ -8,19 +8,19 @@ width:100%;
 height:100%;
 display:flex;
 justify-content:end;
-align-items:end;
+align-items:center;
+background-color:rgba(63, 75, 84, 1);
 `
 
 const Notifications = styled.div`
     display:flex;
     flex-flow:column nowrap;
-    background-color:white;
     width:15%;
     height:400px;
     border:1px solid black;
     justify-content:start;
     align-items:center;
-    background-color:darkgrey;
+    background-color:rgba(46, 49, 49, 1);
     position:relative;
     z-index: 10;
 `
