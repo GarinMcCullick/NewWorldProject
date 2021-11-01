@@ -44,14 +44,14 @@ const P = styled.p`
 
 export const NavItem = (props) => {
     
-    const {userObject} = useContext(myContext)
+    const userObject = useContext(myContext)
     
     const [open, setOpen] = useState(false);
     return(
         <User onClick={()=> setOpen(!open)}>
             <NameContainer>
                 <Icon></Icon>
-                <P>{}</P>
+                <P>{userObject.username}</P>
             </NameContainer>
             {open && props.children}
         </User>
@@ -94,7 +94,6 @@ export const DropDownMenu = () => {
             withCredentials: true
         }).then(res => {
             if(res.data === "done") {
-                localStorage.clear();
                 window.location.href = "/";
             }
         })
@@ -103,7 +102,7 @@ export const DropDownMenu = () => {
     return(
         <DropDown>
             <Link>
-                <A href='/Dashboard'>Profile</A>
+                <A href=''>Profile</A>
             </Link>
             <Link>
                 <A href=''>Account Settings</A>

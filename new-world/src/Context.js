@@ -1,39 +1,29 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import axios from 'axios';
+
 
 export const myContext = createContext({});
 
-const reload = () => {
+    
 
-        if( !localStorage.getItem('firstLoad') )
-    {
-      localStorage['firstLoad'] = true;
-      window.location.reload();
-    }  
-    else
-      localStorage.removeItem('firstLoad');
-  }
-
-
-export default function Context(props) {
-
-    const [userObject, setUserObject] = useState();
+    export default function Context(props) {
+        
+        const [userObject, setUserObject] = useState();
 
     useEffect(() => {
+        fetchData()
+    }, [])
+
+    const fetchData = () => {
         axios.get("https://the-agency-backend.herokuapp.com/getuser", { withCredentials: true }).then((res) => {
-            
-            if(res.data) {
-                setUserObject(res.data)
-                localStorage.setItem('user', JSON.stringify(res.data))
-                reload()
-                
+            if (res.data) {
+                setUserObject(res.data);
             }
-        }).catch((err)=>{
-        console.log(err)
-        return(err)
-    })
-    },[])
-    return(
-        <myContext.Provider value={{userObject, setUserObject}}>{props.children}</myContext.Provider>
+        })
+    }
+
+    return (
+        <myContext.Provider value={userObject}>{props.children}</myContext.Provider>
     )
 }
+

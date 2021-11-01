@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import './App.css'
 import UnAuthNav from './Components/UnauthNav';
 import AuthNav from './Components/AuthNav'
@@ -11,17 +11,32 @@ import Dashboard from './Pages/Dashboard';
 import Company from './Pages/Company';
 import Forums from './Pages/Forums';
 import Events from './Pages/Events';
+import { myContext } from './Context';
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false)
   
-  useEffect(() => {
-    localStorage.getItem('user') && setIsAuth(true)
-  },[])
+  const userObject = useContext(myContext)
+  console.log(userObject)
+  
 //SET UP CONDITIONAL RENDERING ANNNNNND PROTECTED ROUTES, PROTECTED ROUTES INSIDE THE NAVS NOT IN APP
-if(isAuth === false){
-  return (
+return (
+  userObject ? (
+  
     <div className='app'>
+      <Router>
+          <AuthNav />
+          <Switch>
+          <Route path='/dashboard' component={Dashboard} />
+          <Route path='/company' component={Company}/>
+          <Route path='/forums' component={Forums}/>
+          <Route path='/events' component={Events}/>  
+          </Switch>
+      </Router>
+    </div>
+
+  ) : (
+
+  <div className='app'>
         <Router>
           <UnAuthNav />
           <Home />
@@ -30,22 +45,10 @@ if(isAuth === false){
           <Companies />
         </Router>
     </div>
-  );
-}else{
-  return(
-    <div className='app'>
-      <Router>
-          <AuthNav />
-          <Switch>
-          <Route path='/dashboard' component={Dashboard} />
-          <Route path='/company' component={Company}/>
-          <Route path='/forums' component={Forums}/>
-          <Route path='/events' component={Events}/>
-                        
-          </Switch>
-      </Router>
-    </div>
-  );
-}
-}
+    
+  )
+)
+  }
+
+
 export default App;

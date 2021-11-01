@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
+import { myContext } from "../Context";
 
 const Wrapper = styled.div`
     position:absolute;
@@ -50,6 +51,8 @@ const UserName = styled.div`
     align-self:end;
     margin-bottom:8%;
     overflow-x:auto;
+    text-align:center;
+    color:white;
 `
 
 const ProfilePic = styled.div`
@@ -80,11 +83,13 @@ const Bio = styled.div`
 `
 
 const ProfileDashboard = () => {
+    const userObject = useContext(myContext)
+
     return(
         <Wrapper>
             <UserWrapper>
                 <UserName>
-username
+                    {userObject.username}
                 </UserName>
                 <ProfilePic>
 pic
@@ -93,7 +98,7 @@ pic
 
             <CompanyWrapper>
                 <Company>
-company name
+                    
                 </Company>
             </CompanyWrapper>
 
