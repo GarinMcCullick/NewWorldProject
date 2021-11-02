@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import './Home.css'
 
 const Wrapper = styled.div`

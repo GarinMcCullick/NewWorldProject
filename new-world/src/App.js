@@ -8,10 +8,10 @@ import About from './Pages/About';
 import Community from './Pages/Community';
 import Companies from './Pages/Companies';
 import Dashboard from './Pages/Dashboard';
-import Company from './Pages/Company';
 import Forums from './Pages/Forums';
 import Events from './Pages/Events';
 import { myContext } from './Context';
+import Roster from './Pages/Roster';
 
 function App() {
   
@@ -27,7 +27,7 @@ return (
           <AuthNav />
           <Switch>
           <Route path='/dashboard' component={Dashboard} />
-          <Route path='/company' component={Company}/>
+          <Route path='/Roster' component={Roster}/>
           <Route path='/forums' component={Forums}/>
           <Route path='/events' component={Events}/>  
           </Switch>

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { HashLink } from 'react-router-hash-link'
-import axios from 'axios'
 import { BrowserRouter as Router } from 'react-router-dom';
 //add on authorized nav import {DropDownMenu, NavItem} from './NavItem'
 
