@@ -102,7 +102,7 @@ export const DropDownMenu = () => {
     return(
         <DropDown>
             <Link>
-                <A href=''>Profile</A>
+                <A href='/dashboard'>Profile</A>
             </Link>
             <Link>
                 <A href=''>Account Settings</A>

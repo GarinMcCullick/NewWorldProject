@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { DropDownMenu, NavItem } from './NavItem'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Dashboard from '../Pages/Dashboard'
+import { Link } from 'react-router-dom'
 //add on authorized nav import {DropDownMenu, NavItem} from './NavItem'
 
 const Wrapper = styled.div`
@@ -56,7 +55,7 @@ function AuthNav() {
                             <Li><StyledLink to="/dashboard">Dashboard</StyledLink></Li>
                        
                         
-                            <Li><StyledLink to="/company">Company</StyledLink></Li>
+                            <Li><StyledLink to="/Roster">Roster</StyledLink></Li>
                         
                         
                             <Li><StyledLink to="/forums">Forums</StyledLink></Li>
