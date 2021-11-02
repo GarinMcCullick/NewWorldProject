@@ -71,6 +71,12 @@ const DropDown = styled.div`
 `
 
 const Link = styled.div`
+    font-size:65%;
+    color:black;
+    margin-left:0.8rem;
+`
+
+const A = styled.a`
     height:10%;
     width:100%;
     margin-top:5%;
@@ -78,13 +84,7 @@ const Link = styled.div`
     align-items:center;
     background-color:rgba(200, 200, 200, 0.85);
     cursor:pointer;
-`
-
-const A = styled.a`
-    font-size:65%;
     text-decoration:none;
-    color:black;
-    margin-left:0.8rem;
 `
 
 export const DropDownMenu = () => {
@@ -101,15 +101,23 @@ export const DropDownMenu = () => {
 
     return(
         <DropDown>
-            <Link>
-                <A href='/dashboard'>Profile</A>
-            </Link>
-            <Link>
-                <A href=''>Account Settings</A>
-            </Link>
-            <Link>
-                <A onclick={logout}>SignOut</A>
-            </Link>
+            <A href='/dashboard'>
+                <Link>
+                    Profile
+                </Link>
+            </A>
+
+            <A href=''>
+                <Link>
+                    Account Settings
+                </Link>
+            </A>
+            
+            <A onclick={logout}>
+                <Link>
+                    SignOut
+                </Link>
+            </A>
         </DropDown>
     )
 }
