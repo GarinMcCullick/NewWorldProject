@@ -45,8 +45,8 @@ const RosterCard = () =>{
             <UserAvatar>pic</UserAvatar>
             <UserName>name</UserName>
             <Level>level</Level>
-            <MainClass>class1</MainClass>
-            <SecondaryClass>class2</SecondaryClass>
+            <MainClass>Primary</MainClass>
+            <SecondaryClass>Secondary</SecondaryClass>
             <CrafterTag>craft</CrafterTag>
             <CraftingLevel>Crafting Level</CraftingLevel>
         </Card>

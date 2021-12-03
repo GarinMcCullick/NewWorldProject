@@ -52,9 +52,9 @@ const Roster = () => {
                 </Title>
                 <Headings>
                     <Section></Section>
-                    <Section>name</Section>
-                    <Section>level</Section>
-                    <Section>Main</Section>
+                    <Section>Name</Section>
+                    <Section>Level</Section>
+                    <Section>Primary</Section>
                     <Section>Secondary</Section>
                     <Section>Crafter</Section>
                     <Section>Crafting Level</Section>

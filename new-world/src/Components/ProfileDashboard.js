@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import styled from "styled-components";
 import { myContext } from "../Context";
 
@@ -129,12 +129,25 @@ const Button = styled.button`
 `
 
 const ProfileDashboard = () => {
-
+    //context
     const userObject = useContext(myContext)
     console.log(userObject)
-    
+
+    //state
+    const [userLvl, setUserLvl] = useState('0-10')
+    const [userPrimary, setUserPrimary] = useState('firestaff')
+    const [userSecondary, setUserSecondary] = useState('firestaff')
+    const [userCrafting, setUserCrafting] = useState('weaponsmithing')
+    const [userCraftingLvl, setUserCraftingLvl] = useState('0-25')
+    const [userBio, setUserBio] = useState('')
+
+    //event handlers
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
     return(
-    <form>
+    <form onSubmit={handleSubmit}>
         <Wrapper>
             <UserWrapper>
                 <UserName>
@@ -148,83 +161,112 @@ const ProfileDashboard = () => {
             <CompanyWrapper>
                 <Company>
                     <Select>
-                        <option value='0'>The Agency</option>
-                        <option value='1'>The Buero</option>
+                        <option value='Agency'>The Agency</option>
+                        <option value='Buero'>The Buero</option>
                     </Select>
                 </Company>
 
                 <Sections>
                     <Headings>Level</Headings>
-                    <Headings>Main</Headings>
+                    <Headings>Primary</Headings>
                     <Headings>Secondary</Headings>
                     <Headings>Crafting</Headings>
                     <Headings>Crafting lvl</Headings>
                 </Sections>
 
                 <CharacterInfo>
-                    <Select>
-                        <option value='0'>0-10</option>
-                        <option value='1'>10-20</option>
-                        <option value='1'>20-30</option>
-                        <option value='1'>30-40</option>
-                        <option value='1'>40-50</option>
-                        <option value='1'>50-60</option>
-                        <option value='1'>60+</option>
+
+                    {/*  Making sure the State works ;)
+                    {console.log('LVL:',userLvl)}
+                    {console.log('PRIMARY:',userPrimary)}
+                    {console.log('SECONDARY:',userSecondary)}
+                    {console.log('CRAFTING:',userCrafting)}
+                    {console.log('CRAFTINGLVL:',userCraftingLvl)}
+                    {console.log('BIO:',userBio)}
+                    */}
+
+                    <Select 
+                    value={userLvl}
+                    onChange={(e) => setUserLvl(e.target.value)}
+                    >
+                        <option value='0-10'>0-10</option>
+                        <option value='10-20'>10-20</option>
+                        <option value='20-30'>20-30</option>
+                        <option value='30-40'>30-40</option>
+                        <option value='40-50'>40-50</option>
+                        <option value='50-60'>50-60</option>
+                        <option value='60'>60+</option>
                     </Select>
-                    <Select>
-                        <option value='0'>FireStaff</option>
-                        <option value='1'>IceGauntlet</option>
-                        <option value='0'>LifeStaff</option>
-                        <option value='1'>Bow</option>
-                        <option value='0'>Musket</option>
-                        <option value='1'>Rapier</option>
-                        <option value='0'>Hatchet</option>
-                        <option value='1'>Sword/Shield</option>
-                        <option value='0'>Spear</option>
-                        <option value='1'>Great Axe</option>
-                        <option value='0'>War Hammer</option>
+                    <Select
+                    value={userPrimary}
+                    onChange={(e) => setUserPrimary(e.target.value)}
+                    >
+                        <option value='firestaff'>FireStaff</option>
+                        <option value='icegauntlet'>IceGauntlet</option>
+                        <option value='lifestaff'>LifeStaff</option>
+                        <option value='bow'>Bow</option>
+                        <option value='musket'>Musket</option>
+                        <option value='rapier'>Rapier</option>
+                        <option value='hatchet'>Hatchet</option>
+                        <option value='sword/shield'>Sword/Shield</option>
+                        <option value='spear'>Spear</option>
+                        <option value='great axe'>Great Axe</option>
+                        <option value='war hammer'>War Hammer</option>
                     </Select>
-                    <Select>
-                        <option value='0'>FireStaff</option>
-                        <option value='1'>IceGauntlet</option>
-                        <option value='0'>LifeStaff</option>
-                        <option value='1'>Bow</option>
-                        <option value='0'>Musket</option>
-                        <option value='1'>Rapier</option>
-                        <option value='0'>Hatchet</option>
-                        <option value='1'>Sword/Shield</option>
-                        <option value='0'>Spear</option>
-                        <option value='1'>Great Axe</option>
-                        <option value='0'>War Hammer</option>
+                    <Select
+                    value={userSecondary}
+                    onChange={(e) => setUserSecondary(e.target.value)}
+                    >
+                        <option value='firestaff'>FireStaff</option>
+                        <option value='icegauntlet'>IceGauntlet</option>
+                        <option value='lifestaff'>LifeStaff</option>
+                        <option value='bow'>Bow</option>
+                        <option value='musket'>Musket</option>
+                        <option value='rapier'>Rapier</option>
+                        <option value='hatchet'>Hatchet</option>
+                        <option value='sword/shield'>Sword/Shield</option>
+                        <option value='spear'>Spear</option>
+                        <option value='great axe'>Great Axe</option>
+                        <option value='war hammer'>War Hammer</option>
                     </Select>
-                    <Select>
-                        <option value='0'>Weaponsmithing</option>
-                        <option value='1'>Armoring</option>
-                        <option value='0'>Engineering</option>
-                        <option value='1'>Jewelcrafting</option>
-                        <option value='0'>Arcana</option>
-                        <option value='1'>Cooking</option>
-                        <option value='0'>Furnishing</option>
+                    <Select
+                    value={userCrafting}
+                    onChange={(e) => setUserCrafting(e.target.value)}
+                    >
+                        <option value='weaponsmithing'>Weaponsmithing</option>
+                        <option value='armoring'>Armoring</option>
+                        <option value='engineering'>Engineering</option>
+                        <option value='jewelcrafting'>Jewelcrafting</option>
+                        <option value='arcana'>Arcana</option>
+                        <option value='cooking'>Cooking</option>
+                        <option value='furnishing'>Furnishing</option>
                     </Select>
-                    <Select>
-                        <option value='0'>0-25</option>
-                        <option value='1'>25-50</option>
-                        <option value='0'>50-75</option>
-                        <option value='1'>75-100</option>
-                        <option value='0'>100-125</option>
-                        <option value='1'>125-150</option>
-                        <option value='0'>150-175</option>
-                        <option value='1'>175-200</option>
-                        <option value='0'>200+</option>
+                    <Select
+                    value={userCraftingLvl}
+                    onChange={(e) => setUserCraftingLvl(e.target.value)}
+                    >
+                        <option value='0-25'>0-25</option>
+                        <option value='25-50'>25-50</option>
+                        <option value='50-75'>50-75</option>
+                        <option value='75-100'>75-100</option>
+                        <option value='100-125'>100-125</option>
+                        <option value='125-150'>125-150</option>
+                        <option value='150-175'>150-175</option>
+                        <option value='175-200'>175-200</option>
+                        <option value='200+'>200+</option>
                     </Select>
                 </CharacterInfo>
             </CompanyWrapper>
 
             <BioWrapper>
-                <Bio placeholder='Add a Bio!'>
+                <Bio 
+                placeholder='Add a Bio!'
+                value={userBio}
+                onChange={(e) => setUserBio(e.target.value)}
+                >
                     
                 </Bio>
-                <Button>Update</Button>
+                <Button type='submit' value='submit'>Update</Button>
             </BioWrapper>
             
         </Wrapper>
