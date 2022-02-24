@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 //add on authorized nav import {DropDownMenu, NavItem} from './NavItem'
 
 const Wrapper = styled.div`
-    background-color: grey;
+    background-color: rgb(35,35,35);
     height:5%;
     width:100%;
     display:flex;
@@ -15,6 +15,8 @@ const Wrapper = styled.div`
     opacity:0.9;
     z-index:1;
     align-items:center;
+    overflow:hidden;
+    
 `
 
 const Links = styled.div`
@@ -26,7 +28,24 @@ const Links = styled.div`
 `
 
 const NavLink = styled(HashLink)`
-    color:black;
+    letter-spacing:0.09rem;
+    color:silver;
+    font-weight: 600;
+
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+
+  animation: shine 2.5s linear infinite;
+
+  @keyframes shine {
+    from { -webkit-mask-position: 150%; }
+    to { -webkit-mask-position: -50%; }
+  }
+
+  
+  &:hover {
+      text-decoration-color:skyblue;
+  }
 `
 
 const Login = styled.div`

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import Carousel from "../Components/Carousel"
+import Carousel from '../Components/Carousel'
 
 const Wrapper = styled.div`
     height:100vh;
@@ -7,73 +7,31 @@ const Wrapper = styled.div`
     text-align:center;
     display:flex;
     flex-flow:column nowrap;
-    justify-content:space-between;
+    justify-content:center;
+    align-items:center;
+    background-color:#181818;
 `
-const Title = styled.div`
-    width:100%;
-    height:5%;
+const InnerWrapper = styled.div`
+    width:80%;
+    height:95%;
+    border-radius:25px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
     margin-top:50px;
+    margin-bottom:50px;
+    background-color:rgba(255,255,255,.75);
 `
 
-const TopHalf = styled.div`
-    width:95%;
-    height:35%;
-    margin-left:auto;
-    margin-right:auto;
-    display:flex;
-    flex-flow:row wrap;
-    justify-content:space-between;
-`
-
-const LeftPanel = styled.div`
-    height:300px;
-    width:700px;
-    margin-left:5rem;
-    margin-top:auto;
-    margin-bottom:auto;
-    box-shadow: 15px 5px 15px 5px #292626;
-    border-radius:5%;
-`
-
-const RightPanel = styled.div`
-    height:250px;
-    width:500px;
-    margin-right:10%;
-    margin-top:auto;
-    margin-bottom:auto;
-    box-shadow: 15px 5px 15px 5px #292626;
-    border-radius:5%;
-`
-
-const BottomHalf = styled.div`
-    height:500px;
-    width:700px;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom:auto;
-    margin-top:auto;
-    box-shadow:5px 5px 15px 5px black;
+const Title = styled.h2`
+    height:5%;
 `
 
 const About = () => {
     return(
         <Wrapper id='about'>
-            <Title>
-                About Us
-            </Title>
-
-            <TopHalf>
-                <LeftPanel>
-                    
-                </LeftPanel>
-                <RightPanel>
-
-                </RightPanel>
-            </TopHalf>
-
-            <BottomHalf>
-                <Carousel />
-            </BottomHalf>
+            <InnerWrapper>
+                <Title>About Us</Title>
+                <Carousel></Carousel>
+            </InnerWrapper>
         </Wrapper>
     )
 }
