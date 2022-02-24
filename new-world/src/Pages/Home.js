@@ -7,7 +7,7 @@ const Wrapper = styled.div`
     text-align:center;
     display:flex;
     align-items:center;
-    background-image: url(/Images/img1.jpg);
+    background-image: url(/Images/lostArkPaladin.jpg);
     background-size:cover;
 `
 
