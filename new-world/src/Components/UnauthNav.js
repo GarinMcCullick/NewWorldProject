@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     justify-content:space-between;
     position:fixed;
     opacity:0.9;
-    z-index:1;
+    z-index:10;
     align-items:center;
     overflow:hidden;
     
