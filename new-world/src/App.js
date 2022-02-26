@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './App.css'
 import UnAuthNav from './Components/UnauthNav';
 import AuthNav from './Components/AuthNav'
@@ -16,7 +16,10 @@ import Roster from './Pages/Roster';
 function App() {
   
   const userObject = useContext(myContext)
-  console.log(userObject)
+  useEffect(()=>{console.log(userObject)})
+    
+  
+  
   
 //SET UP CONDITIONAL RENDERING ANNNNNND PROTECTED ROUTES, PROTECTED ROUTES INSIDE THE NAVS NOT IN APP
 return (
