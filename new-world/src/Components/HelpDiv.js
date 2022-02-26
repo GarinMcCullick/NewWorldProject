@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import styled from "styled-components";
 import { FaDiscord, FaScroll, FaUserCheck, FaNetworkWired } from "react-icons/fa"
 import HelpDiscord from "./HelpDiscord";
+import HelpRules from "./HelpRules";
+import HelpAttendance from "./HelpAttendance";
+import HelpServers from "./HelpServers";
 
 const Wrapper = styled.div`
     width:80%;
@@ -95,6 +98,61 @@ const Icon = styled.div`
 
 export default function HelpDiv(){
 
+    const [showDiscordInfo, setShowDiscordInfo] = useState(true);
+    const [showRulesInfo, setShowRulesInfo] = useState(false);
+    const [showAttendanceInfo, setShowAttendanceInfo] = useState(false);
+    const [showServerInfo, setShowServerInfo] = useState(false);
+
+    const handleDiscordInfoClick = () => {
+        setShowDiscordInfo(true);
+        setShowRulesInfo(false);
+        setShowAttendanceInfo(false);
+        setShowServerInfo(false);
+        
+        console.log(1)
+        
+        }
+
+    const handleRulesInfoClick = () => {
+        setShowDiscordInfo(false)
+        setShowRulesInfo(true)
+        setShowAttendanceInfo(false)
+        setShowServerInfo(false)
+        console.log('2')
+    }
+
+    const handleAttendanceInfoClick = () => {
+        setShowDiscordInfo(false);
+        setShowRulesInfo(false);
+        setShowAttendanceInfo(true);
+        setShowServerInfo(false);
+        console.log('3')
+    }
+
+    const handleServerInfoClick = () => {
+        setShowDiscordInfo(false);
+        setShowRulesInfo(false);
+        setShowAttendanceInfo(false);
+        setShowServerInfo(true);
+        return(
+        console.log('4')
+        )
+    }
+
+
+    
+        let display 
+        if(showDiscordInfo === true){
+            display = <HelpDiscord />
+        }else if(showRulesInfo === true) {
+            display = <HelpRules />
+        }else if(showAttendanceInfo === true) {
+            display = <HelpAttendance />
+        }else if(showServerInfo === true) {
+            display = <HelpServers />
+        }
+    
+
     return(
         <Wrapper>
             <Navigation>
@@ -102,26 +160,26 @@ export default function HelpDiv(){
                     <H3>Info</H3>
                 </Title>
                 <Icons>
-                    <Icon>
+                    <Icon onClick={handleDiscordInfoClick}>
                         <FADiscord />
                         <P>Login</P>
                     </Icon>
-                    <Icon>
+                    <Icon onClick={handleRulesInfoClick}>
                         <FAScroll />
                         <P>Rules</P>
                     </Icon>
-                    <Icon>
+                    <Icon onClick={handleAttendanceInfoClick}>
                         <FAUserCheck />
                         <P>Attendance</P>
                     </Icon>
-                    <Icon>
+                    <Icon onClick={handleServerInfoClick}>
                         <FANetworkWired />
                         <P>Servers</P>
                     </Icon>
                 </Icons>
             </Navigation>
             <Info>
-                <HelpDiscord />
+                {display}
             </Info>
         </Wrapper>
     )
