@@ -16,10 +16,10 @@ const Wrapper = styled.div`
 const Logo = styled.div`
 color:red;
     position:fixed;
-    top:80%;
-    left:92%;
-    width:150px;
-    height:150px;
+    top:86.5%;
+    left:93%;
+    width:100px;
+    height:100px;
     background-image: url(/Images/winged-sword.svg);
     background-size:cover;
     animation: spin 3s infinite;
@@ -73,7 +73,6 @@ const onClickHelpScreen = () => {
     }else{
         setHelpScreen(false)
     }
-    console.log(helpScreen)
 }
 
 if(helpScreen === false){
