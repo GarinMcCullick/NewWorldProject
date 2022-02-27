@@ -108,17 +108,13 @@ export default function HelpDiv(){
         setShowRulesInfo(false);
         setShowAttendanceInfo(false);
         setShowServerInfo(false);
-        
-        console.log(1)
-        
-        }
+    }
 
     const handleRulesInfoClick = () => {
         setShowDiscordInfo(false)
         setShowRulesInfo(true)
         setShowAttendanceInfo(false)
         setShowServerInfo(false)
-        console.log('2')
     }
 
     const handleAttendanceInfoClick = () => {
@@ -126,7 +122,6 @@ export default function HelpDiv(){
         setShowRulesInfo(false);
         setShowAttendanceInfo(true);
         setShowServerInfo(false);
-        console.log('3')
     }
 
     const handleServerInfoClick = () => {
@@ -134,9 +129,6 @@ export default function HelpDiv(){
         setShowRulesInfo(false);
         setShowAttendanceInfo(false);
         setShowServerInfo(true);
-        return(
-        console.log('4')
-        )
     }
 
 

@@ -33,6 +33,26 @@ const P1 = styled.p`
     margin-right:5%;
 `
 
+const Li = styled.li`
+    color:black;
+    list-style-color:darkgreen;
+    list-style-type: circle;
+    width:90%;
+    max-width:90%;
+    text-align:left;
+    margin-top:1.5rem;
+    margin-left:1rem;
+`
+
+const Ol = styled.ol`
+    width:100%;
+    display:flex;
+    flex-flow:column wrap;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:0.5rem;
+`
+
 export default function HelpAttendance() {
 
     return(
@@ -41,7 +61,13 @@ export default function HelpAttendance() {
                 <H2>Attendance</H2>
             </Title>
             <Body>
-                <P1></P1>
+                <P1>
+                    <p>Our attendance policy is as follows:</p>
+                    <Ol>
+                        <Li>Members are required to login to thier account at least once a week.</Li>
+                        <Li>Members must attend one stand up meeting a week. Exceptions will be made on a case by case basis. These are importnant as they are used for tracking our roster</Li>
+                    </Ol>
+                </P1>
             </Body>
         </Wrapper>
     )
